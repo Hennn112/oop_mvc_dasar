@@ -62,13 +62,10 @@ class PinjamModel{
     {
         $keyword = $_POST['keyword'];
         $query = "SELECT * FROM $this->table WHERE 
-                 nama_peminjam LIKE :keyword or jenis_barang LIKE :keyword";
-
+                  nama_peminjam LIKE :keyword or jenis_barang LIKE :keyword";
 
         $this->db->query($query);
-
         $this->db->bind('keyword', "%$keyword%");
-
         return $this->db->resultSet();
     }
 }

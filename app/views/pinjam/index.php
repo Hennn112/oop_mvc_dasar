@@ -14,7 +14,7 @@
                 </form>
             </div>
         </nav>
-    <table class="table table-success table-striped table-bordered">
+    <table class="table table-white table-striped table-bordered">
         <thead>
             <tr>
             <th scope="col">#</th>
@@ -28,7 +28,10 @@
             </tr>
         </thead>
         <tbody>
-            <?php $no=1; ?>
+            <?php $no=1; 
+                  date_default_timezone_set('Asia/Jakarta');
+                  $date = date('Y-m-d H:i:s');
+            ?>
             <?php foreach ($data['pinjam'] as $row) :?>
                 <tr>
                     <td><?= $no; ?></td>
@@ -37,7 +40,7 @@
                     <td><?= $row['no_barang']; ?></td>
                     <td><?= $row['tgl_pinjam']; ?></td>
                     <td><?= $row['tgl_kembali']; ?></td>
-                    <td><?php if ($row['tgl_pinjam'] == $row['tgl_kembali'] || $row['tgl_pinjam'] > $row['tgl_kembali'] ):?>
+                    <td><?php if ($row['tgl_pinjam'] == $row['tgl_kembali'] || $row['tgl_pinjam'] > $row['tgl_kembali'] || $date >= $row['tgl_kembali'] ):?>
                             <h5><span class="badge bg-success">Sudah Kembali</span></h5>
                             <?php $cek = true ?>
                         <?php else:?>

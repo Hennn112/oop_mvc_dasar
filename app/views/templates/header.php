@@ -20,7 +20,7 @@
                 <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>/home/index">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="<?= BASE_URL ?>/pinjam/index/">Buku Saya</a>
+                    <a class="nav-link text-light" href="<?= BASE_URL ?>/pinjam/index/">Peminjaman</a>
                 </li>
             </ul>
             </div>
